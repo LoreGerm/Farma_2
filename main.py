@@ -1,5 +1,5 @@
 from customer import Address, Customer
-import json
+
 
 a = Address()
 c = Customer()

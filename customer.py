@@ -50,18 +50,18 @@ class Customer:
     def set_json(self,jsonstr):
         diz = json.loads(jsonstr)
         
-        if '__customer_name' in diz.keys():
-            self.__customer_name = diz['__customer_name']
+        if '_Customer__customer_name' in diz.keys():
+            self.__customer_name = diz['_Customer__customer_name']
 
-        if '__customer_surname' in diz.keys():
-            self.__customer_surname = diz['__customer_surname']
+        if '_Customer__customer_surname' in diz.keys():
+            self.__customer_surname = diz['_Customer__customer_surname']
 
-        if '__idcard' in diz.keys():
-            self.__idcard = diz['__idcard']
+        if '_Customer__idcard' in diz.keys():
+            self.__idcard = diz['_Customer__idcard']
 
-        if '__address' in diz.keys():
+        if '_Customer__address' in diz.keys():
             addr = Address()
-            self.__address = addr.set_json(diz['_Customer__address'])
+            self.__address = addr.set_address(diz['_Customer__address'])
 
 
 
@@ -78,31 +78,31 @@ class Address:
     def __init__(self):
         pass
 
-    def set_json(self,jsonstr):
-        diz = json.loads(jsonstr)
-        if '__addr_line_1' in diz.keys():
-            self.__addr_line_1 = diz['__addr_line_1']
+    def set_address(self,jsonstr):
+        diz = jsonstr
+        if '_Address__addr_line_1' in diz.keys():
+            self.__addr_line_1 = diz['_Address__addr_line_1']
 
-        if '__addr_line_2' in diz.keys():
-            self.__addr_line_2 = diz['__addr_line_2']
+        if '_Address__addr_line_2' in diz.keys():
+            self.__addr_line_2 = diz['_Address__addr_line_2']
 
-        if '__addr_line_3' in diz.keys():
-            self.__addr_line_3 = diz['__addr_line_3']
+        if '_Address__addr_line_3' in diz.keys():
+            self.__addr_line_3 = diz['_Address__addr_line_3']
 
-        if '__city' in diz.keys():
-            self.__city = diz['__city']
+        if '_Address__city' in diz.keys():
+            self.__city = diz['_Address__city']
         
-        if '__zip' in diz.keys():
-            self.__zip = diz['__zip']
+        if '_Address__zip' in diz.keys():
+            self.__zip = diz['_Address__zip']
 
-        if '__state_province_country' in diz.keys():
-            self.__state_province_country = diz['__state_province_country']
+        if '_Address__state_province_country' in diz.keys():
+            self.__state_province_country = diz['_Address__state_province_country']
 
-        if '__country' in diz.keys():
-            self.__country = diz['__country']
+        if '_Address__country' in diz.keys():
+            self.__country = diz['_Address__country']
             
-        if '__other_addr_details' in diz.keys():
-            self.__other_addr_details = diz['__other_addr_details']
+        if '_Address__other_addr_details' in diz.keys():
+            self.__other_addr_details = diz['_Address__other_addr_details']
 
 
     def get_addr_line_1(self):
